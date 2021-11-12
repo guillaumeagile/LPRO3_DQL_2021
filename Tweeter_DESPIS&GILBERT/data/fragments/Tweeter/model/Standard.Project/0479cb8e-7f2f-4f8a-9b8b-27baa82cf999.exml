@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Tweeter" version="4">
+  <OBJECT>
+    <ID name="Tweeter" mc="Standard.Project" uid="0479cb8e-7f2f-4f8a-9b8b-27baa82cf999"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[Tweeter]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="tweeter" mc="Standard.Package" uid="e1b8a242-3b24-43a4-bc15-0b46fb0828b9"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="Tweeter" mc="Infrastructure.DiagramSet" uid="421a2e31-07f7-468b-b5f7-735f1fc8324b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
