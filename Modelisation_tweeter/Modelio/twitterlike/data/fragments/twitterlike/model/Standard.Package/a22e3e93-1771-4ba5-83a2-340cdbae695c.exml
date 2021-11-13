@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="twitterlike" version="4">
+  <OBJECT>
+    <ID name="twitterlike" mc="Standard.Package" uid="a22e3e93-1771-4ba5-83a2-340cdbae695c"/>
+    <PID name="twitterlike" mc="Standard.Project" uid="9ca4ffdb-07d4-47e1-ad79-af90b3ebd557"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[twitterlike]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilisateur" mc="Standard.Class" uid="662f5994-9b13-4d37-a0de-708789cbbeac"/>
+        <COMPID name="Moment" mc="Standard.Class" uid="38110682-98ff-442b-b16b-d2ee89dfc787"/>
+        <COMPID name="Post" mc="Standard.Class" uid="762641c8-ea0a-439e-ba6b-4a93bf2fce06"/>
+        <COMPID name="Like" mc="Standard.Class" uid="8a8abcdc-feab-44c6-9025-c670a4417440"/>
+        <COMPID name="Commentaire" mc="Standard.Class" uid="8da17116-f94b-4fe5-bf5a-0734873bbaf1"/>
+        <COMPID name="Repost" mc="Standard.Class" uid="864acecf-644b-479b-9154-aba45447edec"/>
+        <COMPID name="SignalementPost" mc="Standard.Class" uid="00676122-9344-4a40-9ed3-d1734465e3c0"/>
+        <COMPID name="Contenu" mc="Standard.Class" uid="932b3b57-8551-4f6b-97b3-eac4b8c65000"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagramme de classe twitterlike" mc="Standard.ClassDiagram" uid="2620ad0e-130a-4be9-be27-97127b630ef2"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
