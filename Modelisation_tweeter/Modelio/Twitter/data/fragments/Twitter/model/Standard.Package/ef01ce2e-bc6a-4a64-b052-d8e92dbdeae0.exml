@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="twitter" version="4">
+  <OBJECT>
+    <ID name="twitter" mc="Standard.Package" uid="ef01ce2e-bc6a-4a64-b052-d8e92dbdeae0"/>
+    <PID name="Twitter" mc="Standard.Project" uid="5aec7daf-4912-4640-bf1e-57c33fd4c1f2"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[twitter]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="USER" mc="Standard.Class" uid="35172204-3305-4621-8b81-c4d88c9ab4c7"/>
+        <COMPID name="POST" mc="Standard.Class" uid="7ceeb290-3dc0-4319-a061-18e76ac1adf9"/>
+        <COMPID name="MOMENT" mc="Standard.Class" uid="cb7f9443-f38d-4716-96a8-5ecc501a0c2d"/>
+        <COMPID name="PICTURE" mc="Standard.Class" uid="3c2a3826-3ef5-4ed5-a94b-ac75f0e66563"/>
+        <COMPID name="REPOST" mc="Standard.Class" uid="7ec9b6ff-1754-4d49-abd7-fce1ccf388a6"/>
+        <COMPID name="LIKE" mc="Standard.Class" uid="a4be4737-5255-4490-9cce-177047b093d3"/>
+        <COMPID name="COMMENT" mc="Standard.Class" uid="155f613f-c7e4-4ff6-a45a-76971fbe0f93"/>
+        <COMPID name="REPORT_USER" mc="Standard.Class" uid="f5ab1bb9-1fd7-4f00-9134-6058126b62ad"/>
+        <COMPID name="REPORT_POST" mc="Standard.Class" uid="2f989560-a7a8-46d6-b2c7-15e6c9178a81"/>
+        <COMPID name="FOLLOW_USER" mc="Standard.Class" uid="7ac03526-9e4f-43fb-97dc-12fa016519ca"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagramme de classe twitter" mc="Standard.ClassDiagram" uid="b1d32896-4719-43a3-8365-75eee0b6a2dc"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
