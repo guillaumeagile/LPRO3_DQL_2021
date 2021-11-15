@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="twitter_roux_blanc" version="4">
+  <OBJECT>
+    <ID name="twitter_roux_blanc" mc="Standard.Package" uid="06f2e718-f65b-461c-ae94-7b99a59712de"/>
+    <PID name="Twitter_Roux_Blanc" mc="Standard.Project" uid="09d60d94-7803-46e4-a75c-09f37620ccb3"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[twitter_roux_blanc]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilisateur" mc="Standard.Class" uid="df5aeae6-2953-4e33-b034-fbba694b74d1"/>
+        <COMPID name="Post" mc="Standard.Class" uid="add047a7-3239-4f5a-add9-7313a99afba1"/>
+        <COMPID name="Commentaire" mc="Standard.Class" uid="f937b5ee-b04f-445a-b734-0dd65d05027e"/>
+        <COMPID name="Like" mc="Standard.Class" uid="cb7d83a4-2077-4bb2-ae00-8a15cf1be24d"/>
+        <COMPID name="Repost" mc="Standard.Class" uid="20d587ef-8699-44c6-823c-98271143b5ed"/>
+        <COMPID name="Signaler" mc="Standard.Class" uid="54a92ef0-5de8-464e-838e-00bfd448e1e6"/>
+        <COMPID name="Moment" mc="Standard.Class" uid="53da7fd2-af31-4263-ac35-c672ff872d2a"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagramme de classe twitter_roux_blanc" mc="Standard.ClassDiagram" uid="52f5f34c-1092-4b14-9156-4902c01019f7"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

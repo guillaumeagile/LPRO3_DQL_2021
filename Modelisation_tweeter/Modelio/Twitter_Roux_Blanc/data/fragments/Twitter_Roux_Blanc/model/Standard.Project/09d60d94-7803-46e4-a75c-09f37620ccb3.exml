@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Twitter_Roux_Blanc" version="4">
+  <OBJECT>
+    <ID name="Twitter_Roux_Blanc" mc="Standard.Project" uid="09d60d94-7803-46e4-a75c-09f37620ccb3"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[Twitter_Roux_Blanc]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="twitter_roux_blanc" mc="Standard.Package" uid="06f2e718-f65b-461c-ae94-7b99a59712de"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="Twitter_Roux_Blanc" mc="Infrastructure.DiagramSet" uid="f6074f35-82bd-4c53-b828-00cec518a882"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
