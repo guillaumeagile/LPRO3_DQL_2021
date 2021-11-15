@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="tweeter" version="4">
+  <OBJECT>
+    <ID name="tweeter" mc="Standard.Package" uid="e1b8a242-3b24-43a4-bc15-0b46fb0828b9"/>
+    <PID name="Tweeter" mc="Standard.Project" uid="0479cb8e-7f2f-4f8a-9b8b-27baa82cf999"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[tweeter]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Post" mc="Standard.Class" uid="3deb586a-3326-456b-b06b-d3ec571a7e36"/>
+        <COMPID name="Utilisateur" mc="Standard.Class" uid="e35bedb6-ca3a-4812-beaa-5d6dae9c1dff"/>
+        <COMPID name="Moment" mc="Standard.Class" uid="70e9e145-b1c6-4e5a-9036-400f89e9dfc5"/>
+        <COMPID name="Image" mc="Standard.Class" uid="2a3226e5-fd22-4a75-8279-edb374008ed9"/>
+        <COMPID name="Lien" mc="Standard.Class" uid="7ff9fba6-0191-424d-bf16-ecb7643b37e3"/>
+        <COMPID name="Like" mc="Standard.Class" uid="31413e42-ecbb-43d4-859d-23b60d951890"/>
+        <COMPID name="Commentaire" mc="Standard.Class" uid="9d2a9942-b3e0-497a-8ca9-826d765878c7"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="tweeter Class diagram" mc="Standard.ClassDiagram" uid="07d9a1b4-9ed2-4c55-8218-739fb99f02d0"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
