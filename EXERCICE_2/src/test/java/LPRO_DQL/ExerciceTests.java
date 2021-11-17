@@ -20,19 +20,16 @@ public class ExerciceTests {
     }
 
     @Test
-    public void faireUnThéSansSucre() {
+    public void PremierCas() {
         //given
-        final Exercice distributeurDeBoisson = new Exercice();
+        final Exercice exercice = new Exercice();
 
         //when
-        final String actual = distributeurDeBoisson.f1();
+        final String actual = exercice.f1();
         //then
-        assertThat(actual, is("T::"));
-        Assertions.assertThat(actual).isEqualTo("T::");
+        assertThat(actual, is(""));
+        Assertions.assertThat(actual).isEqualTo("");
     }
-
-
-
 
 /*
     @Test
