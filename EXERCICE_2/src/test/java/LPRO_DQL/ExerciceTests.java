@@ -1,6 +1,5 @@
 package LPRO_DQL;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -18,8 +17,9 @@ public class ExerciceTests {
 
     @Before
     public void initialise() {
-
     }
+
+    // !!! pour comprendre comment marche une Map/HashMap en java, lisez ceci:  https://www.data-transitionnumerique.com/java-hashmap/
 
     @Test
     public void listeVide() {
@@ -27,10 +27,17 @@ public class ExerciceTests {
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
         //when
-        final int actual = exercice.f1(1, listeEntiers);
-        //then
-        assertThat(actual, is(0));
-        Assertions.assertThat(actual).isEqualTo(0);  //cette ligne c'est la même chose que la précédente, choisissez l'écriture qui vous plait le plus
+        final var actual = exercice.f1(1, listeEntiers);
+        //ASSERT
+        var firstResult = actual.entrySet().iterator().next();
+        //dans le 1er element de la Map<Int, String> on trouve la clé qui est une entier qui contient le nombre d'entiers positifs trouvés
+        // eton trouve dans la valeur <String> de cette map, la chaine de caractère
+
+        assertThat(firstResult.getKey(), is(0));
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(0);  //cette ligne c'est la même chose que la précédente, choisissez l'écriture qui vous plait le plus
+
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("\n");
     }
 
     @Test
@@ -40,9 +47,9 @@ public class ExerciceTests {
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(1);
         //when
-        final int actual = exercice.f1(1, listeEntiers);
+        final var actual = exercice.f1(1, listeEntiers);
         //then
-        Assertions.assertThat(actual).isZero();
+        // Assertions.assertThat(actual).isZero();
     }
 
     @Test
@@ -52,7 +59,7 @@ public class ExerciceTests {
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(-1);
         //when
-        final int actual = exercice.f1(1, listeEntiers);
+        final var actual = exercice.f1(1, listeEntiers);
         //then
         assertThat(actual, is(1));
 
