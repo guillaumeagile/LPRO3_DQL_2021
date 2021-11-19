@@ -439,3 +439,11 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Java
+**/target/*
+.classpath
+.project
+.settings
+.idea
+*.iml
