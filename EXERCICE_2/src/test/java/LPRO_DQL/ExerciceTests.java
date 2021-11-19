@@ -34,7 +34,7 @@ public class ExerciceTests {
         // eton trouve dans la valeur <String> de cette map, la chaine de caractère
 
         assertThat(firstResult.getKey(), is(0));
-        Assertions.assertThat(firstResult.getKey()).isEqualTo(0);  //cette ligne c'est la même chose que la précédente, choisissez l'écriture qui vous plait le plus
+        Assertions.assertThat(firstResult.getKey()).isZero();  //cette ligne c'est la même chose que la précédente, choisissez l'écriture qui vous plait le plus
 
         //2e verification:  que contient la chaine de caractère?
         Assertions.assertThat(firstResult.getValue()).isEqualTo("\n");
@@ -49,7 +49,10 @@ public class ExerciceTests {
         //when
         final var actual = exercice.f1(1, listeEntiers);
         //then
-        // Assertions.assertThat(actual).isZero();
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isZero();
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("1 \n");
     }
 
     @Test
@@ -61,7 +64,10 @@ public class ExerciceTests {
         //when
         final var actual = exercice.f1(1, listeEntiers);
         //then
-        assertThat(actual, is(1));
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("\n");
 
     }
 
