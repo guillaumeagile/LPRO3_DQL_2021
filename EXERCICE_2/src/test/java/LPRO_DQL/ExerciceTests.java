@@ -1,8 +1,7 @@
 package LPRO_DQL;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,21 +47,12 @@ public class ExerciceTests {
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(158);
         //when
-        final var actual = exercice.f1(1, listeEntiers);
+        final var actual = exercice.f1(100, listeEntiers);
         //then
         //Assertions.assertThat(actual).isZero();
-        assertTrue(actual.containsKey(0));
-        boolean expectedValueFound = false;
-
-        String[] tableauEntiers = actual.get(0).split(" ");
-
-        for (int i = 0; i < tableauEntiers.length; i++) {
-            if(tableauEntiers[i].equals("158")) {
-                expectedValueFound = true;
-            }
-        }
-
-        assertTrue(expectedValueFound);
+        Integer firstKey = actual.keySet().stream().findFirst().get();
+        String[] tableauEntiers = actual.get(firstKey).split(" ");
+        assertEquals("158",tableauEntiers[0].trim());
     }
 
     @Test
@@ -77,28 +67,25 @@ public class ExerciceTests {
         listeEntiers.add(-1);
         listeEntiers.add(-2);
         //when
-        final var actual = exercice.f1(100, listeEntiers);
+        final var actual = exercice.f1(3, listeEntiers);
         //then
         //Assertions.assertThat(actual).isZero();
         boolean expectedValueFound1 = false;
         boolean expectedValueFound2 = false;
-        boolean expectedValueFound3 = false;
 
-        String[] tableauEntiers = actual.get(2).split(" ");
+        Integer firstKey = actual.keySet().stream().findFirst().get();
+        String[] tableauEntiers = actual.get(firstKey).split(" ");
 
-        for (int i = 0; i < tableauEntiers.length; i++) {
-            if(tableauEntiers[i].equals("158")) {
+        for (String entier : tableauEntiers) {
+            //entier = entier.trim();
+            if(entier.equals("158")) {
                 expectedValueFound1 = true;
-            } else if(tableauEntiers[i].equals("220")) {
+            } else if(entier.equals("220")) {
                 expectedValueFound2 = true;
-            } else if(tableauEntiers[i].equals("445")) {
-                expectedValueFound3 = true;
             }
         }
-
         assertTrue(expectedValueFound1);
         assertTrue(expectedValueFound2);
-        assertTrue(expectedValueFound3);
     }
 
     @Test
@@ -132,6 +119,57 @@ public class ExerciceTests {
         //then
         assertTrue(actual.containsKey(5));
     }
+
+    //Version 2.0
+    /*   @Test
+    public void listeVide() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        //when
+        final var actual = exercice.f1(1, listeEntiers);
+        //ASSERT
+        var firstResult = actual.entrySet().iterator().next();
+        //dans le 1er element de la Map<Int, String> on trouve la clé qui est une entier qui contient le nombre d'entiers positifs trouvés
+        // eton trouve dans la valeur <String> de cette map, la chaine de caractère
+
+        assertThat(firstResult.getKey(), is(0));
+        Assertions.assertThat(firstResult.getKey()).isZero();  //cette ligne c'est la même chose que la précédente, choisissez l'écriture qui vous plait le plus
+
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("\n");
+    }
+
+    @Test
+    public void listeAvecUnEntierPositif() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(1);
+        //when
+        final var actual = exercice.f1(1, listeEntiers);
+        //then
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isZero();
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("1 \n");
+    }
+
+    @Test
+    public void listeAvecUnEntierNegatif() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(-1);
+        //when
+        final var actual = exercice.f1(1, listeEntiers);
+        //then
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("\n");
+
+    }*/
 
 /*
     @Test
