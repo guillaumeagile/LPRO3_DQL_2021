@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Tweeter" version="4">
+  <OBJECT>
+    <ID name="Tweeter" mc="Infrastructure.DiagramSet" uid="421a2e31-07f7-468b-b5f7-735f1fc8324b"/>
+    <PID name="Tweeter" mc="Standard.Project" uid="0479cb8e-7f2f-4f8a-9b8b-27baa82cf999"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[Tweeter]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
