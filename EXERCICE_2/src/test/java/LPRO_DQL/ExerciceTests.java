@@ -1,6 +1,7 @@
 package LPRO_DQL;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class ExerciceTests {
         // eton trouve dans la valeur <String> de cette map, la chaine de caractère
 
         assertThat(firstResult.getKey(), is(0));
+
         Assertions.assertThat(firstResult.getKey()).isZero();  //cette ligne c'est la même chose que la précédente, choisissez l'écriture qui vous plait le plus
 
         //2e verification:  que contient la chaine de caractère?
@@ -45,31 +47,85 @@ public class ExerciceTests {
         //given
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
-        listeEntiers.add(1);
+        listeEntiers.add(8);
         //when
         final var actual = exercice.f1(1, listeEntiers);
         //then
         var firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isZero();
         //2e verification:  que contient la chaine de caractère?
-        Assertions.assertThat(firstResult.getValue()).isEqualTo("1 \n");
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("8 \n");
     }
 
     @Test
-    public void listeAvecUnEntierNegatif() {
+    public void listeAvecDeuxEntiersNegatifs() {
         //given
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(-1);
+        listeEntiers.add(-2);
         //when
-        final var actual = exercice.f1(1, listeEntiers);
+        final var actual = exercice.f1(2, listeEntiers);
         //then
         var firstResult = actual.entrySet().iterator().next();
-        Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(2);
         //2e verification:  que contient la chaine de caractère?
         Assertions.assertThat(firstResult.getValue()).isEqualTo("\n");
-
     }
+
+    @Test
+    public void listeAvecUnPositifEtUnNegatif() {  // règle des 3 A
+        //given  / ARRANGE
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(-9);
+        listeEntiers.add(9);
+        //when / ACT
+        final var actual = exercice.f1(2, listeEntiers);
+        //then / ASSERT
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("9 \n");
+    }
+
+    @Test
+    public void listeAvecTroisPositifsEtUnNeg() {  // règle des 3 A
+        //given  / ARRANGE
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(4);   //1
+        listeEntiers.add(9);    //2
+        listeEntiers.add(8);    //3
+        listeEntiers.add(-8);   //4
+        listeEntiers.add(-9);   // non pris en compte
+
+        //when / ACT
+        final var actual = exercice.f1(4, listeEntiers);
+        //then / ASSERT
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("4 9 8 \n");
+    }
+
+    @Test
+    public void listeAvecTroisPositifsLimiteA2() {  // règle des 3 A
+        //given  / ARRANGE
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(4);
+        listeEntiers.add(9);
+        listeEntiers.add(8);
+
+        //when / ACT
+        final var actual = exercice.f1(2, listeEntiers);
+        //then / ASSERT
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(0);
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("4 9 \n");
+    }
+
+
+
 
 /*
     @Test
