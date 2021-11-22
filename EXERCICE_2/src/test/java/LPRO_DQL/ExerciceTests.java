@@ -120,19 +120,7 @@ public class ExerciceTests {
         final var actual = exercice.f1(2, listeEntiers);
         //then / ASSERT
         var firstResult = actual.entrySet().iterator().next();
-        Assertions.assertThat(firstResult.getKey()).isEqualTo(0);
+        Assertions.assertThat(firstResult.getKey()).isZero();
         Assertions.assertThat(firstResult.getValue()).isEqualTo("4 9 \n");
     }
-
-
-
-
-/*
-    @Test
-    @Parameters({
-            "actual, expected"
-    })
-    public void beTestable(String actual, String expected) {
-      assertThat((actual), is(expected));
-    }*/
 }

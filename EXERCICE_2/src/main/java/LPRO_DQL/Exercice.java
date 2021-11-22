@@ -8,6 +8,8 @@ import java.util.Map;
 //COMPILER AVEC JDK 15 !!!!!
 public class Exercice {
 
+
+
     public Map<Integer, String> f1(int nombreDeValeursAnalysees, List<Integer> valeursAAnalyser) {
         var aRetourner = new HashMap<Integer, String>();
         int nombreDEntierNegatifs = 0;
