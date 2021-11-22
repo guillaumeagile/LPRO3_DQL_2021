@@ -7,21 +7,23 @@ import java.util.Map;
 
 //COMPILER AVEC JDK 15 !!!!!
 public class Exercice {
-        public Map<Integer, String> compteNbValeursInfZeroEtAjouteValeursSup(int NbValue, List<Integer> ListeValue) {
-            var MapRenvoi = new HashMap<Integer, String>();
-            int NbValueInfZero = 0;
-            String ListeStringOfValueSupZeo = "";
-            for (int i = 0; i < ListeValue.size() && i < NbValue; i++) {
-                int nbExtact = ListeValue.get(i);
-                if (nbExtact >= 0) {
-                    ListeStringOfValueSupZeo = ListeStringOfValueSupZeo + (nbExtact + " ");
-                } else {
-                    NbValueInfZero++;
-                }
-            }
-            ListeStringOfValueSupZeo += ("\n");
-            MapRenvoi.put(NbValueInfZero, ListeStringOfValueSupZeo);
-            return MapRenvoi;
-        }
-    }
 
+
+
+    public Map<Integer, String> f1(int nombreDeValeursAnalysees, List<Integer> valeursAAnalyser) {
+        var aRetourner = new HashMap<Integer, String>();
+        int nombreDEntierNegatifs = 0;
+        var suiteDesEntiersPositifs = new StringBuilder();
+        for (int i = 0; i < valeursAAnalyser.size() && i < nombreDeValeursAnalysees; i++) {
+            int nombreExtrait = valeursAAnalyser.get(i);
+            if (nombreExtrait >= 0) {
+                suiteDesEntiersPositifs.append(String.format("%d ", nombreExtrait));
+            } else {
+                nombreDEntierNegatifs++;
+            }
+        }
+        suiteDesEntiersPositifs.append("\n");
+        aRetourner.put(nombreDEntierNegatifs, suiteDesEntiersPositifs.toString());
+        return aRetourner;
+    }
+}
