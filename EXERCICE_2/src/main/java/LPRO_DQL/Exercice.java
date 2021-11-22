@@ -11,9 +11,9 @@ public class Exercice {
         var tableauRetour = new HashMap<Integer, String>();
 
         long nbreDeNegatifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer < 0).collect(Collectors.counting());
-        String listeDePositifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer >= 0).map( Object::toString ).collect(Collectors.joining(" ")) + ("\n");
+        String suiteDesEntiersPositifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer >= 0).map( Object::toString ).collect(Collectors.joining(" ")) + (" \n");
 
-        tableauRetour.put(((int) nbreDeNegatifs), listeDePositifs);
+        tableauRetour.put(((int) nbreDeNegatifs), suiteDesEntiersPositifs);
         return tableauRetour;
     }
 

@@ -31,13 +31,13 @@ public class ExerciceTests {
         //ASSERT
         var firstResult = actual.entrySet().iterator().next();
         //dans le 1er element de la Map<Int, String> on trouve la clé qui est une entier qui contient le nombre d'entiers positifs trouvés
-        // eton trouve dans la valeur <String> de cette map, la chaine de caractère
+        // et on trouve dans la valeur <String> de cette map, la chaine de caractère
 
         assertThat(firstResult.getKey(), is(0));
         //Assertions.assertThat(firstResult.getKey()).isEqualTo(0);  //cette ligne c'est la même chose que la précédente, choisissez l'écriture qui vous plait le plus
 
         //2e verification:  que contient la chaine de caractère?
-        Assertions.assertThat(firstResult.getValue()).isEqualTo("\n");
+        Assertions.assertThat(firstResult.getValue()).isEqualTo(" \n");
     }
 
     @Test
@@ -50,9 +50,15 @@ public class ExerciceTests {
         final var actual = exercice.f1(100, listeEntiers);
         //then
         //Assertions.assertThat(actual).isZero();
-        Integer firstKey = actual.keySet().stream().findFirst().get();
-        String[] tableauEntiers = actual.get(firstKey).split(" ");
-        assertEquals("158",tableauEntiers[0].trim());
+        var firstResult = actual.entrySet().iterator().next();
+        //dans le 1er element de la Map<Int, String> on trouve la clé qui est une entier qui contient le nombre d'entiers positifs trouvés
+        // et on trouve dans la valeur <String> de cette map, la chaine de caractère
+
+        assertThat(firstResult.getKey(), is(0));
+        //Assertions.assertThat(firstResult.getKey()).isEqualTo(0);  //cette ligne c'est la même chose que la précédente, choisissez l'écriture qui vous plait le plus
+
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("158 \n");
     }
 
     @Test
@@ -61,21 +67,24 @@ public class ExerciceTests {
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(158);
-        listeEntiers.add(220);
         listeEntiers.add(445);
+        listeEntiers.add(200);
 
         listeEntiers.add(-1);
         listeEntiers.add(-2);
         //when
-        final var actual = exercice.f1(3, listeEntiers);
+        final var actual = exercice.f1(5, listeEntiers);
         //then
         //Assertions.assertThat(actual).isZero();
+        Integer firstKey = actual.keySet().stream().findFirst().get();
+        Assertions.assertThat(actual.get(firstKey)).isEqualTo("158 445 200 \n");
+        Assertions.assertThat(firstKey).isEqualTo(2);
+
+
+        /*
         boolean expectedValueFound1 = false;
         boolean expectedValueFound2 = false;
-
-        Integer firstKey = actual.keySet().stream().findFirst().get();
         String[] tableauEntiers = actual.get(firstKey).split(" ");
-
         for (String entier : tableauEntiers) {
             //entier = entier.trim();
             if(entier.equals("158")) {
@@ -85,7 +94,7 @@ public class ExerciceTests {
             }
         }
         assertTrue(expectedValueFound1);
-        assertTrue(expectedValueFound2);
+        assertTrue(expectedValueFound2);*/
     }
 
     @Test
@@ -98,7 +107,8 @@ public class ExerciceTests {
         //when
         final var actual = exercice.f1(1, listeEntiers);
         //then
-        assertTrue(actual.containsKey(1));
+        Integer firstKey = actual.keySet().stream().findFirst().get();
+        Assertions.assertThat(firstKey).isEqualTo(1);
     }
 
     @Test
@@ -117,7 +127,29 @@ public class ExerciceTests {
         //when
         final var actual = exercice.f1(100, listeEntiers);
         //then
-        assertTrue(actual.containsKey(5));
+
+        Integer firstKey = actual.keySet().stream().findFirst().get();
+        Assertions.assertThat(firstKey).isEqualTo(5);
+    }
+
+
+    @Test
+    public void listeAvecEntierNegatifEtEntierPositif() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(-9);
+        listeEntiers.add(-15);
+        listeEntiers.add(9);
+        listeEntiers.add(19);
+
+        //when
+        final var actual = exercice.f1(4, listeEntiers);
+
+        //then
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(2);
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("9 19 \n");
     }
 
     //Version 2.0
