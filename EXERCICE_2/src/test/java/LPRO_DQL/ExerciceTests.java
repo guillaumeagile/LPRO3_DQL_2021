@@ -27,7 +27,7 @@ public class ExerciceTests {
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
         //when
-        final var actual = exercice.f1(1, listeEntiers);
+        final var actual = exercice.compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(1, listeEntiers);
         //ASSERT
         var firstResult = actual.entrySet().iterator().next();
         //dans le 1er element de la Map<Int, String> on trouve la clé qui est une entier qui contient le nombre d'entiers positifs trouvés
@@ -47,7 +47,7 @@ public class ExerciceTests {
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(1);
         //when
-        final var actual = exercice.f1(1, listeEntiers);
+        final var actual = exercice.compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(1, listeEntiers);
         //then
         var firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isZero();
@@ -62,7 +62,7 @@ public class ExerciceTests {
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(-1);
         //when
-        final var actual = exercice.f1(1, listeEntiers);
+        final var actual = exercice.compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(1, listeEntiers);
         //then
         var firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
@@ -71,6 +71,105 @@ public class ExerciceTests {
 
     }
 
+    @Test
+    public void listeAvecPlusieursEntiersNegatifsEtGrandA1() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(-1);
+        listeEntiers.add(5);
+        listeEntiers.add(3);
+        listeEntiers.add(-10);
+        listeEntiers.add(-15);
+        listeEntiers.add(-33);
+        //when
+        final var actual = exercice.compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(6, listeEntiers);
+        //then
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(4);
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("5 3 \n");
+    }
+
+    @Test
+    public void listeAvecBeaucoupEntiersNegatifsEtPetitA1() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(-1);
+        listeEntiers.add(5);
+        listeEntiers.add(3);
+        listeEntiers.add(-10);
+        listeEntiers.add(-15);
+        listeEntiers.add(-33);
+        //when
+        final var actual = exercice.compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(2, listeEntiers);
+        //then
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("5 \n");
+    }
+
+    @Test
+    public void listeAvecBeaucoupEntiersProcheDeZeroEtGrandA1() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(-1);
+        listeEntiers.add(5);
+        listeEntiers.add(3);
+        listeEntiers.add(0);
+        listeEntiers.add(1);
+        listeEntiers.add(-33);
+        //when
+        final var actual = exercice.compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(6, listeEntiers);
+        //then
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(2);
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("5 3 0 1 \n");
+    }
+
+    @Test
+    public void listeAvecBeaucoupEntiersPositifsEtGrandA1() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(8);
+        listeEntiers.add(5);
+        listeEntiers.add(3);
+        listeEntiers.add(15);
+        listeEntiers.add(1);
+        listeEntiers.add(38);
+        //when
+        final var actual = exercice.compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(6, listeEntiers);
+        //then
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(0);
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("8 5 3 15 1 38 \n");
+    }
+
+    @Test
+    public void listeAvecBeaucoupEntiersPositifsEtPetitA1() {
+        //given
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(8);
+        listeEntiers.add(5);
+        listeEntiers.add(3);
+        listeEntiers.add(15);
+        listeEntiers.add(1);
+        listeEntiers.add(38);
+        //when
+        final var actual = exercice.compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(1, listeEntiers);
+        //then
+        var firstResult = actual.entrySet().iterator().next();
+        Assertions.assertThat(firstResult.getKey()).isEqualTo(0);
+        //2e verification:  que contient la chaine de caractère?
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("8 \n");
+    }
 /*
     @Test
     @Parameters({

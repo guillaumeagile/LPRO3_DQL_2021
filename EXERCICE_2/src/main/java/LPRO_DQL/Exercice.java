@@ -8,20 +8,20 @@ import java.util.Map;
 //COMPILER AVEC JDK 15 !!!!!
 public class Exercice {
 
-    public Map<Integer, String> f1(int a1, List<Integer> a2) {
-        var a7 = new HashMap<Integer, String>();
-        int a5 = 0;
-        String a9 = "";
-        for (int a3 = 0; a3 < a2.size() && a3 < a1; a3++) {
-            int a6 = a2.get(a3);
-            if (a6 >= 0) {
-                a9 = a9 + (a6 + " ");
+    public Map<Integer, String> compteNombreValeursInferieurAZeroEtAjouteLesValeursPositives(int nombreDeValeursAAnalyser, List<Integer> listBase) {
+        var renvoi = new HashMap<Integer, String>();
+        int nombreValeursInferieuresAZero = 0;
+        String ChaineDeValeursPositives = "";
+        for (int i = 0; i < listBase.size() && i < nombreDeValeursAAnalyser; i++) {
+            int nombreExtrait = listBase.get(i);
+            if (nombreExtrait >= 0) {
+                ChaineDeValeursPositives = ChaineDeValeursPositives + (nombreExtrait + " ");
             } else {
-                a5++;
+                nombreValeursInferieuresAZero++;
             }
         }
-        a9 += ("\n");
-        a7.put(a5, a9);
-        return a7;
+        ChaineDeValeursPositives += ("\n");
+        renvoi.put(nombreValeursInferieuresAZero, ChaineDeValeursPositives);
+        return renvoi;
     }
 }
