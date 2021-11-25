@@ -5,6 +5,8 @@ import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import junitparams.JUnitParamsRunner;
 import org.LproDql.coursPOO.Exercice;
 import org.assertj.core.api.Assertions;
@@ -28,9 +30,9 @@ public class ExerciceTests {
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
         //when
-        final var actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(1, listeEntiers);
+        Map<Integer, String> actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(1, listeEntiers);
         //ASSERT
-        var firstResult = actual.entrySet().iterator().next();
+        Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         //dans le 1er element de la Map<Int, String> on trouve la clé qui est une entier qui contient le nombre d'entiers positifs trouvés
         // eton trouve dans la valeur <String> de cette map, la chaine de caractère
 
@@ -49,15 +51,15 @@ public class ExerciceTests {
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(8);
         //when
-        final var actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(1, listeEntiers);
+        Map<Integer, String> actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(1, listeEntiers);
         //then
-        var firstResult = actual.entrySet().iterator().next();
+        Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isZero();
         //2e verification:  que contient la chaine de caractère?
         Assertions.assertThat(firstResult.getValue()).isEqualTo("8 \n");
     }
 
-    @Test
+   // @Test
     public void listeAvecDeuxEntiersNegatifs() {
         //given
         final Exercice exercice = new Exercice();
@@ -65,25 +67,25 @@ public class ExerciceTests {
         listeEntiers.add(-1);
         listeEntiers.add(-2);
         //when
-        final var actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(2, listeEntiers);
+        Map<Integer, String> actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(2, listeEntiers);
         //then
-        var firstResult = actual.entrySet().iterator().next();
+        Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isEqualTo(2);
         //2e verification:  que contient la chaine de caractère?
         Assertions.assertThat(firstResult.getValue()).isEqualTo("\n");
     }
 
     @Test
-    public void listeAvecUnPositifEtUnNegatif() {  // règle des 3 A
+    public void listeAvecUnPositifEtUnNegatif() {  // ce test est-il utile?
         //given  / ARRANGE
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
         listeEntiers.add(-9);
         listeEntiers.add(9);
         //when / ACT
-        final var actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(2, listeEntiers);
+        Map<Integer, String> actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(2, listeEntiers);
         //then / ASSERT
-        var firstResult = actual.entrySet().iterator().next();
+        Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
         Assertions.assertThat(firstResult.getValue()).isEqualTo("9 \n");
     }
@@ -100,9 +102,9 @@ public class ExerciceTests {
         listeEntiers.add(-9);   // non pris en compte
 
         //when / ACT
-        final var actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(4, listeEntiers);
+        Map<Integer, String> actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(4, listeEntiers);
         //then / ASSERT
-        var firstResult = actual.entrySet().iterator().next();
+        Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
         Assertions.assertThat(firstResult.getValue()).isEqualTo("4 9 8 \n");
     }
@@ -112,15 +114,15 @@ public class ExerciceTests {
         //given  / ARRANGE
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
-        listeEntiers.add(4);
+        listeEntiers.add(1);
         listeEntiers.add(9);
         listeEntiers.add(8);
 
         //when / ACT
-        final var actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(2, listeEntiers);
+        Map<Integer, String> actual = exercice.compteLesNegatifsEtCOnstruitUneChaineAvecLesPositifs(2, listeEntiers);
         //then / ASSERT
-        var firstResult = actual.entrySet().iterator().next();
+        Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isZero();
-        Assertions.assertThat(firstResult.getValue()).isEqualTo("4 9 \n");
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("1 9 \n");
     }
 }
