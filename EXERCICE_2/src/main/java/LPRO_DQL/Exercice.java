@@ -10,11 +10,30 @@ public class Exercice {
     public Map<Integer, String> f1(int nbrIterationsMax, List<Integer> integerList) {
         var tableauRetour = new HashMap<Integer, String>();
 
-        long nbreDeNegatifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer < 0).collect(Collectors.counting());
-        String suiteDesEntiersPositifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer >= 0).map( Object::toString ).collect(Collectors.joining(" ")) + (" \n");
+        //long nbreDeNegatifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer < 0).collect(Collectors.counting());
+        //String suiteDesEntiersPositifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer >= 0).map( Object::toString ).collect(Collectors.joining(" ")) + (" \n");
 
-        tableauRetour.put(((int) nbreDeNegatifs), suiteDesEntiersPositifs);
+        List<Integer> listDeNegatifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer < 0).collect(Collectors.toList());
+        List<Integer> listDePositifs = integerList.stream().limit(((long) nbrIterationsMax)).filter(integer -> integer >= 0).collect(Collectors.toList());
+
+        String concatPositifs = listDePositifs.stream().map( Object::toString ).collect(Collectors.joining(" ")) + (" \n");
+
+        tableauRetour.put(((int) listDeNegatifs.size()), concatPositifs);
         return tableauRetour;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> entiers = new ArrayList<>();
+        entiers.add(5);
+        entiers.add(15);
+        entiers.add(-5);
+        entiers.add(-55);
+        entiers.add(65);
+        entiers.add(25);
+
+        Exercice exo = new Exercice();
+
+        System.out.println(exo.f1(15,entiers));
     }
 
     /* public Map<Integer, String> f1(int a1, List<Integer> a2) {
