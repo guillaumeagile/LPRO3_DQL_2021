@@ -57,7 +57,7 @@ public class ExerciceTests {
         Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isZero();
         //2e verification:  que contient la chaine de caractère?
-        Assertions.assertThat(firstResult.getValue()).isEqualTo("8 \n");
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("8\n");
     }
 
    // @Test
@@ -88,7 +88,7 @@ public class ExerciceTests {
         //then / ASSERT
         Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
-        Assertions.assertThat(firstResult.getValue()).isEqualTo("9 \n");
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("9\n");
     }
 
     @Test
@@ -107,7 +107,7 @@ public class ExerciceTests {
         //then / ASSERT
         Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isEqualTo(1);
-        Assertions.assertThat(firstResult.getValue()).isEqualTo("4 9 8 \n");
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("4 9 8\n");
     }
 
     @Test
@@ -124,7 +124,7 @@ public class ExerciceTests {
         //then / ASSERT
         Entry<Integer, String> firstResult = actual.entrySet().iterator().next();
         Assertions.assertThat(firstResult.getKey()).isZero();
-        Assertions.assertThat(firstResult.getValue()).isEqualTo("1 9 \n");
+        Assertions.assertThat(firstResult.getValue()).isEqualTo("1 9\n");
     }
 
     @Test
@@ -137,7 +137,7 @@ public class ExerciceTests {
         listeEntiers.add(8);
 
         //when / ACT
-        List<Integer> actual = exercice.extraireLesNombresPositifs_v2(3, listeEntiers);
+        List<Integer> actual = exercice.extraireLesNombresPositifs(3, listeEntiers);
         //then / ASSERT
         Assertions.assertThat(actual).isEqualTo(Arrays.asList(1, 9, 8)  );
     }
@@ -152,9 +152,24 @@ public class ExerciceTests {
         listeEntiers.add(8);
 
         //when / ACT
-        List<Integer> actual = exercice.extraireLesNombresPositifs_v2(2, listeEntiers);
+        List<Integer> actual = exercice.extraireLesNombresPositifs(2, listeEntiers);
         //then / ASSERT
         Assertions.assertThat(actual).isEqualTo(Arrays.asList(1, 9)  );
+    }
+
+    @Test
+    public void listeAvecTroisNegatifsLimiteA2_avecNouvelleFonction() {  // règle des 3 A
+        //given  / ARRANGE
+        final Exercice exercice = new Exercice();
+        final List<Integer> listeEntiers = new ArrayList<>();
+        listeEntiers.add(-1);
+        listeEntiers.add(-9);
+        listeEntiers.add(-8);
+
+        //when / ACT
+        List<Integer> actual = exercice.extraireLesNombresNegatifs(2, listeEntiers);
+        //then / ASSERT
+        Assertions.assertThat(actual).isEqualTo(Arrays.asList(-1, -9)  );
     }
 
 }
