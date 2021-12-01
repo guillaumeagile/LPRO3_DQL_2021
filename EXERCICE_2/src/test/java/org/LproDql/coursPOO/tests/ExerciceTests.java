@@ -147,14 +147,14 @@ public class ExerciceTests {
         //given  / ARRANGE
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
-        listeEntiers.add(1);
+        listeEntiers.add(0);
         listeEntiers.add(9);
         listeEntiers.add(8);
 
         //when / ACT
         List<Integer> actual = exercice.extraireLesNombresPositifs(2, listeEntiers);
         //then / ASSERT
-        Assertions.assertThat(actual).isEqualTo(Arrays.asList(1, 9)  );
+        Assertions.assertThat(actual).isEqualTo(Arrays.asList(0, 9)  );
     }
 
     @Test
@@ -162,14 +162,14 @@ public class ExerciceTests {
         //given  / ARRANGE
         final Exercice exercice = new Exercice();
         final List<Integer> listeEntiers = new ArrayList<>();
-        listeEntiers.add(-1);
+        listeEntiers.add(0);
         listeEntiers.add(-9);
         listeEntiers.add(-8);
 
         //when / ACT
         List<Integer> actual = exercice.extraireLesNombresNegatifs(2, listeEntiers);
         //then / ASSERT
-        Assertions.assertThat(actual).isEqualTo(Arrays.asList(-1, -9)  );
+        Assertions.assertThat(actual).isEqualTo(Arrays.asList( -9)  );
     }
 
 }
