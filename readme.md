@@ -98,7 +98,22 @@ https://exerror.com/java-lang-illegalaccesserror-class-lombok-javac-apt-lombokpr
 
 ### Exercice  sur le projet BuckPal
 
-- diagrammes UML de toute la partie model
+- 1 diagramme UML de 'paquetages' de tout ce qu'il y a dans io/reflectoring/buckpal
+(uniquement les paquetages, pas toutes les classes dedans)
+
+- 1 diagramme UML de classes de toute la partie 'model' qui se trouve dans
+io/reflectoring/buckpal/account/domain
+Uniquement les membres (fields, methods) PUBLIC
+
+AU CHOIX UN DES 2 DIAGRAMMES DE SEQUENCE suivant: 
 - diagrammes de sequence de au moins 2 tests dans AccountTest.java
+  ( src/test/java/io/reflectoring/buckpal/account/application/domain/AccountTest.java )
   * withdrawalSucceeds
   * withdrawalFailure
+- (PLUS 5pts) diagrammes de sequence de la fonction 'sendMoney' dans io/reflectoring/buckpal/account/application/service/SendMoneyService.java
+
+
+  Questions bonus (avec des points!)
+  + à quoi sert la classe 'SendMoneyController'? Pourquoi est-elle là ? (io/reflectoring/buckpal/account/adapter/in/web/)
+  + à quoi sert le package 'io/reflectoring/buckpal/account/adapter/out/persistence'?  sur quelle librairie (importante) se base-t-il ?
+  + pourquoi utilisent-ils des interfaces alors que on aurait pu écrire les classes directement (rappel cours SOLID)
