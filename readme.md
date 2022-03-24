@@ -77,7 +77,6 @@ comprendre pourquoi les tests ne marchent pas
 
 celui qui marche en Kotlin
 [Bank]
-
 https://github.com/lmirabal/hexagonal-testing.git
 (kotlin)  gadle build, puis regarder le repertoire build/test-results
 discuter de la pertinence des tests, du découplage
@@ -97,3 +96,9 @@ dependencies {
 https://exerror.com/java-lang-illegalaccesserror-class-lombok-javac-apt-lombokprocessor-cannot-access-class-com-sun-tools-javac-processing-javacprocessingenvironment/
 
 
+### Exercice  sur le projet BuckPal
+
+- diagrammes UML de toute la partie model
+- diagrammes de sequence de au moins 2 tests dans AccountTest.java
+  * withdrawalSucceeds
+  * withdrawalFailure
