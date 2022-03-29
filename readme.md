@@ -161,7 +161,7 @@ c'est une nouvelle classe (donc un nouveau type d'objet) qui a besoin que de 2 i
 Ecrivez cette classe , avec la particularité que cela doit être un Value Object
 https://en.wikipedia.org/wiki/Value_object
 
-Ecrivez 2 test pour vérifier que 2 instance de ce value object (Plage De Date) sont égales si et seulement si leur date de début et de fin (respectives) sont égales.
+Ecrivez 2 tests pour vérifier que 2 instances de ce value object (Plage De Date) sont égales si et seulement si leur date de début et de fin (respectives) sont égales.
 Ils seront 'isNotEqualTo' (ca c'est l'assertion JUnit 5) si au moins une des deux valeurs est différente.
 
 Ensuite, la Plage De Date doit porter une règle métier importante: la date de fin ne peut pas être inférieure à la date de début (logique).
@@ -169,7 +169,7 @@ Vu que date de début et date de fin sont des localDateTime (précis à la minut
 Ecrivez 3 tests qui prouvent cela. Les faire passer au vert.
 
 
-Et pour finir (presque?) gérer la collision de date
+Et pour finir (presque?) gérer la collision de date:
 Ecrire une méthode 'Collision' dans Plage De Date qui prend un paramètre (autrePlageDeDate) et qui retournera un Boolean
 True: si la plage de date courante (this) chevauche par le début ou par la fin ou parce que la  autrePlageDeDate est entièrement recouverte par la plage courante.
 False: dans les autres cas.
