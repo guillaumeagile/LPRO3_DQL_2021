@@ -154,6 +154,9 @@ La 'Demande de Booking' est refusée si le 'Gardien' n'est pas disponible à la 
 C'est à dire qu'il a déjà un booking actif dans son calendrier sur cette plage de date.
 
 
+Vous pouvez ajouter d'autres tests qui correspondent aux User Stories que vous avez choisies dans votre UserStory Mapping du 1er exercice.
+
+
 ### un concept vient d'émerger
 la Plage De Date
 c'est une nouvelle classe (donc un nouveau type d'objet) qui a besoin que de 2 informations: la date de début et la date de fin.
@@ -184,5 +187,7 @@ avez vous besoin de re tester tous les cas de plage de date , pour vérifier le 
 
 # Pour rendre votre devoir
 Créez (ou utilisez) votre Repo GIt
+
 Me donner les droits de lecture (si il est privé)
+
 Mettre aussi dedans les images de la modélisation UML (exercice 2)
