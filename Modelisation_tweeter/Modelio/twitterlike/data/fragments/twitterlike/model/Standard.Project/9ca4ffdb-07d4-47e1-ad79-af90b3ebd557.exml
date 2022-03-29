@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="twitterlike" version="4">
+  <OBJECT>
+    <ID name="twitterlike" mc="Standard.Project" uid="9ca4ffdb-07d4-47e1-ad79-af90b3ebd557"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[twitterlike]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="twitterlike" mc="Standard.Package" uid="a22e3e93-1771-4ba5-83a2-340cdbae695c"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="twitterlike" mc="Infrastructure.DiagramSet" uid="20ded5ac-b7a0-4b74-a6c5-a543f6f365d0"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
