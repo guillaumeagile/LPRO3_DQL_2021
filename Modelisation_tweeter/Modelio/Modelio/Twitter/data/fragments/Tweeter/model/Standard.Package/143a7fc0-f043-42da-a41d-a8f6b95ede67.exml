@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="tweeter" version="4">
+  <OBJECT>
+    <ID name="tweeter" mc="Standard.Package" uid="143a7fc0-f043-42da-a41d-a8f6b95ede67"/>
+    <PID name="Tweeter" mc="Standard.Project" uid="c9081e57-9152-473d-a456-27d7699acb5e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[tweeter]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Utilisateur" mc="Standard.Class" uid="94c23860-e8ca-494f-9c9e-8669fddf6157"/>
+        <COMPID name="Post" mc="Standard.Class" uid="af75fdbd-652f-4010-ba2d-76c5ac013c5b"/>
+        <COMPID name="SignalerUtilisateur" mc="Standard.Class" uid="344c5dc8-9f79-4bb1-902b-b97fdac771b4"/>
+        <COMPID name="Follow" mc="Standard.Class" uid="a56d9444-1303-4966-b11a-9ea739a2ae60"/>
+        <COMPID name="Commentaire" mc="Standard.Class" uid="0a065884-b7c4-43a2-857e-a3c97edece10"/>
+        <COMPID name="Repost" mc="Standard.Class" uid="3f093c77-3f0c-4cd6-aaa6-abc367a89698"/>
+        <COMPID name="Like" mc="Standard.Class" uid="23167828-6050-45cc-9545-397269ff5a1f"/>
+        <COMPID name="SignalerPost" mc="Standard.Class" uid="e9f9597a-d89b-4487-a464-020c13430aa4"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagramme de classe tweeter" mc="Standard.ClassDiagram" uid="5a785b55-c78b-46a4-b93c-6e38619a4793"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
