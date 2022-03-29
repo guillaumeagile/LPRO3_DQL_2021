@@ -128,24 +128,61 @@ REMETTRE LES DIAGRAMMES AU FORMAT PDF (print)
 
 Dans votre langage de prédilection
 contruire un squelette de projet, qui compile  avec une partie de test unitaire/ TDD
+(vous pouvez copier coller le squellete du projet BuckPal et vider la partie Domain)
 
 Avoir un paquetage 'domain', dedans des classes métiers  et surtout un certain nombre de tests unitaire
+Dans ce paquetage, vont apparaitre les objets métiers ( )
+
 
 Quel est le métier:  Pet Sitting
 Sous Contexte (Bounded Context)  =  Booking
 
 La story a retranscrire sous forme d'objets (et de tests):
-un 'Propriétaire' (Joe) qui possède un 'Animal' (Rex, c'est un chien) fait une 'Demande de Booking' à  'Gardien' Helena
+un 'Propriétaire' (Joe) qui possède un 'Animal' (Rex, c'est un chien) fait une Demande de 'Booking' à  'Gardien' Helena
 
 1er test:
 La 'Demande de Booking' est refusée si le 'Gardien' n'a pas 'chien' dans la liste d'animaux acceptés.
 
 2e test: 
 La 'Demande de Booking' est acceptée si le 'Gardien' a le 'chien' dans la liste d'animaux acceptés.
-A ce moment là, le 'Calendrier' du 'Gardien' est modifié, et la date (plage de date, début et fin) est marquée comme occuppée.
+A ce moment là, le 'Calendrier' du 'Gardien' est modifié, et la date (plage de date, début et fin) est marquée comme occuppée. Une astuce: le Calendrier contient une liste de Booking(s).
+Un objet 'Booking' est renvoyé et il contient les infos nécessaire au booking (la date de début et de fin, l'Animal, le Propriétaire, le Gardien, le Montant de la prestation)
 
 
 3e test: 
 La 'Demande de Booking' est refusée si le 'Gardien' n'est pas disponible à la date demandée en fonction de son 'Calendrier'
+C'est à dire qu'il a déjà un booking actif dans son calendrier sur cette plage de date.
 
 
+### un concept vient d'émerger
+la Plage De Date
+c'est une nouvelle classe (donc un nouveau type d'objet) qui a besoin que de 2 informations: la date de début et la date de fin.
+
+Ecrivez cette classe , avec la particularité que cela doit être un Value Object
+https://en.wikipedia.org/wiki/Value_object
+
+Ecrivez 2 test pour vérifier que 2 instance de ce value object (Plage De Date) sont égales si et seulement si leur date de début et de fin (respectives) sont égales.
+Ils seront 'isNotEqualTo' (ca c'est l'assertion JUnit 5) si au moins une des deux valeurs est différente.
+
+Ensuite, la Plage De Date doit porter une règle métier importante: la date de fin ne peut pas être inférieure à la date de début (logique).
+Vu que date de début et date de fin sont des localDateTime (précis à la minute), on peut dire que date de fin doit être supérieure ou égale à date de début.
+Ecrivez 3 tests qui prouvent cela. Les faire passer au vert.
+
+
+Et pour finir (presque?) gérer la collision de date
+Ecrire une méthode 'Collision' dans Plage De Date qui prend un paramètre (autrePlageDeDate) et qui retournera un Boolean
+True: si la plage de date courante (this) chevauche par le début ou par la fin ou parce que la  autrePlageDeDate est entièrement recouverte par la plage courante.
+False: dans les autres cas.
+
+Ecrire 4 tests qui couvrent les cas de collisions et non collision.
+
+### (fin) utiliser 'Collision' de Plage De Date   
+pour le test qui dit que La 'Demande de Booking' est refusée si le 'Gardien' a déjà un Booking enregistré dans son calendrier pour lequel la plage de date est en Collision avec la plage de date demandée.
+
+### Question bonus:
+avez vous besoin de re tester tous les cas de plage de date , pour vérifier le code de 'Demande de Booking' à partir du moment où vous utilisez 'Plage de Date' ?
+
+# Pour rendre votre devoir
+Créez (ou utilisez) votre Repo GIt
+Me donner les droits de lecture (si il est privé)
+Mettre aussi dedans les images de la modélisation UML (exercice 2)
