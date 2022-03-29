@@ -103,7 +103,8 @@ https://exerror.com/java-lang-illegalaccesserror-class-lombok-javac-apt-lombokpr
 
 - 1 diagramme UML de classes de toute la partie 'model' qui se trouve dans
 io/reflectoring/buckpal/account/domain
-Uniquement les membres (fields, methods) PUBLIC
+Uniquement les membres (fields, methods) PUBLIC, sur une classe ca suffira
+Le plus important, c'est les relations entre les classes
 
 AU CHOIX UN DES 2 DIAGRAMMES DE SEQUENCE suivant: 
 - diagrammes de sequence de au moins 2 tests dans AccountTest.java
@@ -113,7 +114,38 @@ AU CHOIX UN DES 2 DIAGRAMMES DE SEQUENCE suivant:
 - (PLUS 5pts) diagrammes de sequence de la fonction 'sendMoney' dans io/reflectoring/buckpal/account/application/service/SendMoneyService.java
 
 
+REMETTRE LES DIAGRAMMES AU FORMAT PDF (print)
+
   Questions bonus (avec des points!)
+  + que fait l'application ?
   + à quoi sert la classe 'SendMoneyController'? Pourquoi est-elle là ? (io/reflectoring/buckpal/account/adapter/in/web/)
   + à quoi sert le package 'io/reflectoring/buckpal/account/adapter/out/persistence'?  sur quelle librairie (importante) se base-t-il ?
   + pourquoi utilisent-ils des interfaces alors que on aurait pu écrire les classes directement (rappel cours SOLID)
+
+
+
+## 3. produire un walking skeleton
+
+Dans votre langage de prédilection
+contruire un squelette de projet, qui compile  avec une partie de test unitaire/ TDD
+
+Avoir un paquetage 'domain', dedans des classes métiers  et surtout un certain nombre de tests unitaire
+
+Quel est le métier:  Pet Sitting
+Sous Contexte (Bounded Context)  =  Booking
+
+La story a retranscrire sous forme d'objets (et de tests):
+un 'Propriétaire' (Joe) qui possède un 'Animal' (Rex, c'est un chien) fait une 'Demande de Booking' à  'Gardien' Helena
+
+1er test:
+La 'Demande de Booking' est refusée si le 'Gardien' n'a pas 'chien' dans la liste d'animaux acceptés.
+
+2e test: 
+La 'Demande de Booking' est acceptée si le 'Gardien' a le 'chien' dans la liste d'animaux acceptés.
+A ce moment là, le 'Calendrier' du 'Gardien' est modifié, et la date (plage de date, début et fin) est marquée comme occuppée.
+
+
+3e test: 
+La 'Demande de Booking' est refusée si le 'Gardien' n'est pas disponible à la date demandée en fonction de son 'Calendrier'
+
+
