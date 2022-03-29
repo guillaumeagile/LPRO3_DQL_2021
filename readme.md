@@ -163,6 +163,9 @@ c'est une nouvelle classe (donc un nouveau type d'objet) qui a besoin que de 2 i
 
 Ecrivez cette classe , avec la particularité que cela doit être un Value Object
 https://en.wikipedia.org/wiki/Value_object
+En Java, plusieurs façon de faire
+https://dzone.com/articles/value-objects
+( dans le projet BuckPal, ils utilisent la librairie Lombok )
 
 Ecrivez 2 tests pour vérifier que 2 instances de ce value object (Plage De Date) sont égales si et seulement si leur date de début et de fin (respectives) sont égales.
 Ils seront 'isNotEqualTo' (ca c'est l'assertion JUnit 5) si au moins une des deux valeurs est différente.

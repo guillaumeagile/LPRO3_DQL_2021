@@ -1,4 +1,4 @@
-package io.reflectoring.buckpal.account.application.domain;
+package io.reflectoring.buckpal.account.domain.bookingPet;
 
 import io.reflectoring.buckpal.account.domain.bookingPet.Animal;
 import io.reflectoring.buckpal.account.domain.bookingPet.Booking;

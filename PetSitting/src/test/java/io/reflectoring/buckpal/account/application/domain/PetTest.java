@@ -1,9 +1,6 @@
 package io.reflectoring.buckpal.account.application.domain;
 
-import io.reflectoring.buckpal.account.domain.bookingPet.Animal;
-import io.reflectoring.buckpal.account.domain.bookingPet.Booking;
-import io.reflectoring.buckpal.account.domain.bookingPet.Gardien;
-import io.reflectoring.buckpal.account.domain.bookingPet.Proprietaire;
+import io.reflectoring.buckpal.account.domain.bookingPet.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -37,6 +34,6 @@ public class PetTest {
         var result = joe.DemandeDeBooking(rex, helena, dateDebut, dateFin);
 
         assertThat(result).isEqualTo(new Booking(rex, helena, dateDebut, dateFin));
-        assertThat(true).isNotEqualTo(false)
+        assertThat(true).isNotEqualTo(false);
     }
 }
