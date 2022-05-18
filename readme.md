@@ -78,7 +78,8 @@ comprendre pourquoi les tests ne marchent pas
 celui qui marche en Kotlin
 [Bank]
 https://github.com/lmirabal/hexagonal-testing.git
-(kotlin)  gadle build, puis regarder le repertoire build/test-results
+(kotlin) 
+lancer: gradle build, puis regarder le repertoire build/test-results
 discuter de la pertinence des tests, du découplage
 
 un autre (en Java):
